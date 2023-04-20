@@ -1,0 +1,55 @@
+.navcontainer{
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: row;
+    padding: 10px;
+    background-color: #343a40e5;
+    justify-content: space-between;
+    
+}
+.menu-container{
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+
+}
+.buttonRandom{
+    background-color: #8ed129; /* Green */
+    border-radius: 20px;
+    border: none;
+    color: #193840;
+    font-weight: bold;
+    width: 220px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+
+.buttonLogout{
+    background-color: #8ed129; /* Green */
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonRoute {
+    background-color: #8ed129; /* Green */
+    border-radius: 20px;
+    border: none;
+    color: #193840;
+    font-weight: bold;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+

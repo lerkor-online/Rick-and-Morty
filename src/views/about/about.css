@@ -1,0 +1,30 @@
+.div-container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(1rem);
+	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.6);
+    width: 70%;
+    border: solid 2px grey;
+    padding: 20px;
+
+    
+    
+    
+}
+
+.p-about{
+    color: rgb(255, 255, 255);
+    
+    width: 70%;
+    text-align: center;
+    
+}
