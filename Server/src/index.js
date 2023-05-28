@@ -1,5 +1,6 @@
 const express = require('express');
 const router = require('./routes');
+const {conn} = require('./DB_Connection'); 
 
 const server = express();
 
@@ -7,7 +8,8 @@ const PORT = 3001;
 
 server.use(express.json())
 
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
+   await conn.sync({ force: true });
    console.log('Server raised in port: ' + PORT);
 });
 

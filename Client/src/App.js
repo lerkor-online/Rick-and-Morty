@@ -37,25 +37,30 @@ const password = '1password'; */
     }
 } */
 
-async function login(userData) {
+/* async function login(userData) {
   const { email, password } = userData;
   const URL = 'http://localhost:3001/rickandmorty/login/';
-
-  /* try {
-    const {data} = await axios(`${URL}?email=${email}&password=${password}`)    
-      const { access } = data;
-      setAccess(data);
-      access && navigate('/home');   
-  } catch (error) {
-    alert(error)
-  } */
   axios(`${URL}?email=${email}&password=${password}`).then(({ data }) => {
      const { access } = data;
      setAccess(access);
   });
   setAccess(true);
      !access && navigate('/home');
-}
+} */
+
+const login = async (userData) => {
+  const { email, password } = userData;
+  const URL = 'http://localhost:3001/rickandmorty/login/';
+  let response = await axios(URL + `?email=${email}&password=${password}`);
+  try {
+    const { access } = response.data;
+     setAccess(access);
+     if (!access) alert('AccessDenied');
+     access && navigate('/home');
+  } catch (error) {
+    console.log('AXIIOS ERROR', error);
+  }
+};
 
 function logout() {
       setAccess(false);

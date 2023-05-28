@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 function Card(props) {
    const navigate = useNavigate();
-   const { character, onClose, addFav, removeFav, myFavorites} = props;
+   const { /* character */ onClose, addFav, removeFav, myFavorites} = props;
    const [closeBtn, setCloseBtn] = useState(true);
    const [isFav, setIsFav] = useState(false);
 
@@ -28,11 +28,11 @@ function Card(props) {
    }, [myFavorites, props.id]);
 
    function navigateHandler() {
-      navigate(`/detail/${character.id}`)
+      navigate(`/detail/${props.id}`)
    }
 
    const handleFavorite = () => {
-      isFav ? removeFav(character.id) : addFav(props);
+      isFav ? removeFav(props.id) : addFav(props);
       setIsFav(!isFav);
       }
 
@@ -40,7 +40,7 @@ function Card(props) {
    return (
       <div className={styles.DivCard}>
          {closeBtn ? (
-         <button className={styles.Button} onClick={() => onClose(character.id)}>X</button>) :null}
+         <button className={styles.Button} onClick={() => onClose(props.id)}>X</button>) :null}
          {
             isFav ? (
                <button onClick={handleFavorite}>❤️</button>
@@ -48,14 +48,14 @@ function Card(props) {
                <button onClick={handleFavorite}>🤍</button>
             )
          }
-         <h2 className={styles.h2} >{character.name}</h2>
+         <h2 className={styles.h2} >{props.name}</h2>
          <div className={styles.DivProps2}>
-            <h2>{character.species}</h2>
-            <h2>{character.gender}</h2>
+            <h2>{props.species}</h2>
+            <h2>{props.gender}</h2>
          </div>
          <img
             className={styles.Img}
-            src={character.image}
+            src={props.image}
             alt=""
             onClick={() => navigateHandler()} />
       </div>

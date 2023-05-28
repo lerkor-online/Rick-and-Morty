@@ -31,9 +31,10 @@ function Form({login}) {
     };
 
     //Login
-function handleSubmit(user){
-    login(user);
-}
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        login(user);
+      };
 
     return (
         <div className="container">
@@ -67,7 +68,7 @@ function handleSubmit(user){
                     onChange={handleChange}/>                 
                 </div>
                     {usererror.password ? <span className="msgError">{usererror.password}</span> : null}
-                <button className="submitBtn" onClick={()=>handleSubmit(user)}>LOGIN</button>
+                <button className="submitBtn" onClick={handleSubmit}>LOGIN</button>
             </form>
         </div>
     );

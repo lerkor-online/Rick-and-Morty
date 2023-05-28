@@ -22,7 +22,7 @@ async function getCharById(req , res){
 
         res.status(200).json(character);
     } catch (error){
-        res.status(500).jason({message: error.message})
+        res.status(500).json({message: error.message})
     }
 }
 
